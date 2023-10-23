@@ -2,12 +2,12 @@
   "name": "food-court-discord",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "src/app.js",
   "type": "module",
   "scripts": {
-    "start": "node src/app.js",
-    "register": "node src/commands.js",
-    "dev": "nodemon src/app.js"
+    "register": "node src/deploy-commands.js",
+    "dev": "nodemon",
+    "debug": "nodemon --inspect"
   },
   "keywords": [],
   "author": "",
