@@ -1,6 +1,6 @@
 import 'dotenv/config'
 import { REST, Routes } from 'discord.js';
-import { GetCommands } from '.';
+import { GetCommands } from './index.js';
 
 const commands = GetCommands();
 const commandsJson = []
