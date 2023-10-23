@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "register": "node src/deploy-commands.js",
+    "register": "node src/commands/deploy.js",
     "dev": "nodemon",
     "debug": "nodemon --inspect"
   },

@@ -4,8 +4,8 @@ import {
     IntentsBitField, 
     Collection 
 } from 'discord.js';
-import { GetCommands } from './commands/index.js';
-import { Files, Parse } from './utils/path.js';
+import { GetCommands } from '../commands/index.js';
+import { Files, Parse } from '../utils/path.js';
 
 class FoodCourtBot extends Client {
     constructor(
@@ -34,7 +34,7 @@ class FoodCourtBot extends Client {
     
         for (const file of eventFiles) {
             const eventName = Parse(file);
-            const eventModule = await import(`./events/${eventName.name}.js`);
+            const eventModule = await import(`../events/${eventName.name}.js`);
             const event = eventModule.default;
     
             if (event.once) {
