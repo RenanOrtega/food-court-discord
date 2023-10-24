@@ -1,5 +1,5 @@
-import { Events } from "discord.js";
-import { Foods } from "../sequelize/models/foods.js";
+import { Events } from 'discord.js';
+import { Foods } from '../sequelize/models/foods.js';
 
 export default {
     name: Events.ClientReady,

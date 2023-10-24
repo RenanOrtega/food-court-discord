@@ -1,4 +1,5 @@
-import { Events } from "discord.js";
+import { Events } from 'discord.js';
+import Emoji from '../constants/emoji.js';
 
 export default {
     name: Events.MessageCreate,
@@ -9,8 +10,8 @@ export default {
         const attachment = message.attachments.first();
 
         if (isImage(attachment)) {
-            message.react('👍');
-            message.react('👎');
+            message.react(Emoji.LIKE);
+            message.react(Emoji.DESLIKE);
             return;
         }
         
