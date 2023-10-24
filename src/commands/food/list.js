@@ -17,9 +17,9 @@ const execute = async(interaction) => {
         .addFields(
             { name: 'teste', value: foodString}
         )
-        .setTimestamp()
-
-    return interaction.channel.send({ embeds: [embed]});
+        .setTimestamp();
+    
+    return interaction.reply({ embeds: [embed]});
 };
 
 const LIST_COMMAND = {

@@ -2,7 +2,8 @@ import 'dotenv/config';
 import { 
     Client, 
     IntentsBitField, 
-    Collection 
+    Collection,
+    Partials
 } from 'discord.js';
 import { GetCommands } from '../commands/index.js';
 import { Files, Parse } from '../utils/path.js';
@@ -15,6 +16,12 @@ class FoodCourtBot extends Client {
                 IntentsBitField.Flags.GuildMembers,
                 IntentsBitField.Flags.GuildMessages,
                 IntentsBitField.Flags.MessageContent,
+                IntentsBitField.Flags.GuildMessageReactions
+            ],
+            partials: [
+                Partials.Message,
+                Partials.Channel,
+                Partials.Reaction
             ],
         }
     ) {

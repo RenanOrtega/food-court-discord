@@ -1,4 +1,4 @@
-import { db } from "../connection.js";
+import { db } from '../connection.js';
 import { Sequelize } from "sequelize";
 
 export const Foods = db.define('foods', {
