@@ -5,7 +5,8 @@ import Emoji from '../constants/emoji.js';
 
 export default {
     name: Events.MessageReactionAdd,
-    async execute(reaction) {
+    async execute(reaction, user) {
+        if (user.bot) return;
         
         if (reaction.partial) {
             try {
