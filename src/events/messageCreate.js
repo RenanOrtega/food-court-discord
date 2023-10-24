@@ -6,17 +6,16 @@ export default {
         if (message.author.bot) return;
         if (message.channelId !== process.env.FOOD_COURT_CHANNEL_ID) return;
 
-        const attachments = message.attachments;
+        const attachment = message.attachments.first();
 
-        if (hasImageInMessage(attachments)) {
-            attachments.forEach((attachment) => {
-                if (attachment.contentType.startsWith('image')) {
-                    message.react('👍');
-                    message.react('👎');
-                }
-            });
-        } 
+        if (isImage(attachment)) {
+            message.react('👍');
+            message.react('👎');
+            return;
+        }
+        
+        message.reply('Somente imagens podem ser analisadas!');
     }
 }
 
-const hasImageInMessage = (attachments) => attachments.size > 0;
+const isImage = (attachment) => attachment.contentType.startsWith('image');
